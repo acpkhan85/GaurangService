@@ -17,18 +17,17 @@ namespace BAL.SmartSchool
 
         public Message addUpdateHolidayDetail(Holidays holiday)
         {
-            _classSetupRepository.editHolidays(holiday);
             throw new NotImplementedException();
         }
 
         public Message addUpdateStudentDetail(Student student)
         {
-            throw new NotImplementedException();
+            return _classSetupRepository.createUpdateStudent(student);
         }
 
         public Message createUpdateDivision(ClassRoom division)
         {
-            throw new NotImplementedException();
+           return _classSetupRepository.createUpdateDivision(division);
         }
 
         public List<ClassRoom> getDivision(int standard, int division)

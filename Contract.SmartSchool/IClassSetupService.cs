@@ -21,7 +21,7 @@ namespace Contract.SmartSchool
         [OperationContract]
         List<Student> getStudentDetail(int schoolId, string fname, string lname, int division);
         [OperationContract]
-        bool addUpdateStudentDetail(Student student);
+        Message addUpdateStudentDetail(Student student);
         [OperationContract]
         Message uploadStudentDetail(List<Student> lstStudent);
         #endregion

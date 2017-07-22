@@ -166,7 +166,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BundleConfigurationActivator.cs" />
     <Compile Include="ClassSetupService.svc.cs">
       <DependentUpon>ClassSetupService.svc</DependentUpon>
     </Compile>
@@ -185,7 +184,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Shared\_BundleLayout.cshtml" />
-    <Content Include="Bundles.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -24,12 +24,12 @@ namespace Service.SmartSchool
 
         public Message addUpdateStandrdDivision(ClassRoom classRoomDetail)
         {
-            throw new NotImplementedException();
+            return _class.createUpdateDivision(classRoomDetail);
         }
 
-        public bool addUpdateStudentDetail(Student student)
+        public Message addUpdateStudentDetail(Student student)
         {
-            throw new NotImplementedException();
+            return _class.addUpdateStudentDetail(student);
         }
 
         public List<ExamTimeTable> getExamDetailByStandard(int schoolId, int division)
