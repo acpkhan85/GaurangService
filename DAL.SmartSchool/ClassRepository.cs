@@ -34,7 +34,7 @@ namespace DAL.SmartSchool
 
             return msg;
         }
-        public List<ClassRoom> getDivision(int standard, int division, Pagination pagination)
+        public List<ClassRoom> getDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords)
         {
             List<ClassRoom> lstclassroom = null;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -61,6 +61,7 @@ namespace DAL.SmartSchool
                         lstclassroom.Add(objClassRoom);
                     }
                 }
+                totalNoOfRecords = lstclassroom.Count;
             }
             return lstclassroom;
         }
