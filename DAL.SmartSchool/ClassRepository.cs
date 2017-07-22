@@ -48,7 +48,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@SchoolId", pagination.SchoolId);
                 command.Parameters.AddWithValue("@Division", division);
                 command.Parameters.AddWithValue("@Standard", standard);
-                objReader = objCommand.ExecuteReader();
+                objReader = command.ExecuteReader();
                 if (objReader.HasRows)
                 {
                     lstclassroom = new List<ClassRoom>();
@@ -88,7 +88,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@UpdatedBy", student.UpdatedBy);
                 command.Parameters.AddWithValue("@CreatedDate", student.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", student.UpdatedDate);
-                msg.status = objCommand.ExecuteNonQuery();
+                msg.status = command.ExecuteNonQuery();
             }
 
             return msg;
@@ -97,17 +97,95 @@ namespace DAL.SmartSchool
         #endregion
 
         #region TimeTable
-        public Message createUpdateTimeTable(TimeTable timeTable) { throw new NotImplementedException(); }
+        public Message createUpdateTimeTable(TimeTable timeTable)
+        {
+            Message msg = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                msg = new Message();
+                connection.Open();
+                SqlCommand command = new SqlCommand(Helper.sp_CreateUpdateTimeTables, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                
+                command.Parameters.AddWithValue("@TimeTableID", timeTable.TimeTableID);
+                command.Parameters.AddWithValue("@ClassId", timeTable.ClassId);
+                command.Parameters.AddWithValue("@Mon", timeTable.Mon);
+                command.Parameters.AddWithValue("@Tue", timeTable.Tue);
+                command.Parameters.AddWithValue("@Wed", timeTable.Wed);
+                command.Parameters.AddWithValue("@Thu", timeTable.Thu);
+                command.Parameters.AddWithValue("@Fri", timeTable.Fri);
+                command.Parameters.AddWithValue("@Sat", timeTable.Sat);
+                command.Parameters.AddWithValue("@Sun", timeTable.Sun);
+                command.Parameters.AddWithValue("@CreateBy", timeTable.CreateBy);
+                command.Parameters.AddWithValue("@UpdatedBy", timeTable.UpdatedBy);
+                command.Parameters.AddWithValue("@CreatedDate", timeTable.CreatedDate);
+                command.Parameters.AddWithValue("@UpdatedDate", timeTable.UpdatedDate);
+                msg.status = command.ExecuteNonQuery();
+            }
+
+            return msg;
+        }
         //public List<TimeTable> getTimeTableDetail(int divisionId) { throw new NotImplementedException(); }
         #endregion
 
         #region ExamTimeTable
-        public Message createUpdateExamTimeTable(ExamTimeTable timeTable) { throw new NotImplementedException(); }
+        public Message createUpdateExamTimeTable(ExamTimeTable timeTable)
+        {
+            Message msg = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                msg = new Message();
+                connection.Open();
+                SqlCommand command = new SqlCommand(Helper.sp_CreateUpdateExamTimeTables, connection);
+                command.CommandType = CommandType.StoredProcedure;                
+                command.Parameters.AddWithValue("@ExamTimeTableID", timeTable.ExamTimeTableID);
+                command.Parameters.AddWithValue("@ClassId", timeTable.ClassId);
+                command.Parameters.AddWithValue("@Subject", timeTable.Subject);
+                command.Parameters.AddWithValue("@FromDate", timeTable.FromDate);
+                command.Parameters.AddWithValue("@FromTime", timeTable.FromTime);
+                command.Parameters.AddWithValue("@ToTime", timeTable.ToTime);
+                command.Parameters.AddWithValue("@Location", timeTable.Location);
+                command.Parameters.AddWithValue("@Batch", timeTable.Batch);
+                command.Parameters.AddWithValue("@CreateBy", timeTable.CreateBy);
+                command.Parameters.AddWithValue("@UpdatedBy", timeTable.UpdatedBy);
+                command.Parameters.AddWithValue("@CreatedDate", timeTable.CreatedDate);
+                command.Parameters.AddWithValue("@UpdatedDate", timeTable.UpdatedDate);
+                msg.status = command.ExecuteNonQuery();
+            }
+
+            return msg;
+        }
         //public List<ExamTimeTable> getExamTimeTableDetail(int standard) { throw new NotImplementedException(); }
         #endregion
 
         #region Holidays
-        public Message createUpdateHolidays(Holidays holiday) { throw new NotImplementedException(); }
+        public Message createUpdateHolidays(Holidays holiday)
+        {
+            Message msg = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                msg = new Message();
+                connection.Open();
+                SqlCommand command = new SqlCommand(Helper.sp_CreateUpdateHolidays, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@HolidaysId", holiday.HolidaysId);
+                command.Parameters.AddWithValue("@FromDate", holiday.FromDate);
+                command.Parameters.AddWithValue("@ToDate", holiday.ToDate);
+                command.Parameters.AddWithValue("@Fest", holiday.Festival);
+                command.Parameters.AddWithValue("@Notes", holiday.Notes);
+                command.Parameters.AddWithValue("@SchoolId", holiday.SchoolId);
+                command.Parameters.AddWithValue("@CreateBy", holiday.CreateBy);
+                command.Parameters.AddWithValue("@UpdatedBy", holiday.UpdatedBy);
+                command.Parameters.AddWithValue("@CreatedDate", holiday.CreatedDate);
+                command.Parameters.AddWithValue("@UpdatedDate", holiday.UpdatedDate);
+                msg.status = command.ExecuteNonQuery();
+            }
+
+            return msg;
+        }
         //public List<Holidays> getHolidaysDetail(int schoolId) { throw new NotImplementedException(); }
         #endregion
     }

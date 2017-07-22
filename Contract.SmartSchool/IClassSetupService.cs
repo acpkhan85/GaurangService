@@ -27,7 +27,8 @@ namespace Contract.SmartSchool
         #endregion
 
         #region TimeTable
-        // void addUpdateTimeTable(TimeTable );
+        [OperationContract]
+        Message addUpdateTimeTable(TimeTable timeTable);
         [OperationContract]
         Message uploadTimeTable(List<TimeTable> lstTimeTable);
         [OperationContract]
@@ -38,7 +39,8 @@ namespace Contract.SmartSchool
 
         [OperationContract]
         List<ExamTimeTable> getExamDetailByStandard(int schoolId, int division);
-        //void addUpdateTimetable();
+        [OperationContract]
+        Message addUpdateExamTimeTable(ExamTimeTable examTimeTable);
         [OperationContract]
         Message uploadTimeTableByStandard(List<TimeTable> timeTable);
         #endregion

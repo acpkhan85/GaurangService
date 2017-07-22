@@ -18,8 +18,7 @@ namespace Service.SmartSchool
 
         public Message addUpdateHolidayDetail(Holidays holiday)
         {
-            _class.addUpdateHolidayDetail(holiday);
-            throw new NotImplementedException();
+            return _class.addUpdateHolidayDetail(holiday);
         }
 
         public Message addUpdateStandrdDivision(ClassRoom classRoomDetail)
@@ -30,6 +29,16 @@ namespace Service.SmartSchool
         public Message addUpdateStudentDetail(Student student)
         {
             return _class.addUpdateStudentDetail(student);
+        }
+
+        public Message addUpdateExamTimeTable(ExamTimeTable examTimeTable)
+        {
+            return _class.addUpdateExamTimeTable(examTimeTable);
+        }
+
+        public Message addUpdateTimeTable(TimeTable timeTable)
+        {
+            return _class.addUpdateTimeTable(timeTable);
         }
 
         public List<ExamTimeTable> getExamDetailByStandard(int schoolId, int division)
