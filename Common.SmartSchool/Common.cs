@@ -8,7 +8,14 @@
         public static readonly string sp_CreateUser = "usp_CreateUser";
         public static readonly string sp_CreateUpdateBranding = "usp_CreateBranding";
 
+        public static readonly string sp_GetDivision = "USP_GetAllDivision";
+        public static readonly string sp_CreateUpdateClassRoom = "usp_CU_ClassRooms";
 
+        public static readonly string sp_GetStudents = "USP_GetAllStudent";
+        public static readonly string sp_CreateUpdateStudents = "usp_CU_Students";
+        public static readonly string sp_CreateUpdateTimeTables = "usp_CU_TimeTables";
+        public static readonly string sp_CreateUpdateExamTimeTables = "usp_CU_ExamTimeTables";
+        public static readonly string sp_CreateUpdateHolidays = "usp_CU_Holidays";
     }
 
 }

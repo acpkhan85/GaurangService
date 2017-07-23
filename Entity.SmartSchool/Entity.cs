@@ -271,7 +271,7 @@ namespace Entity.SmartSchool
     #region Holiday Calendar
 
     public class Holidays : SchoolBase
-    {        
+    {
         public string HolidaysId { get; set; }
         public string FromDate { get; set; }
         public string ToDate { get; set; }
@@ -322,5 +322,12 @@ namespace Entity.SmartSchool
         sucusses,
         failure,
         warning
+    }
+
+    public class Pagination : SchoolBase
+    {
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
+        public string SortColumn { get; set; }
     }
 }

@@ -19,10 +19,10 @@ namespace DAL.SmartSchool
 
         public DBHelper()
         {
-            //connectionString = ConfigurationManager.ConnectionStrings["SmartParkConnectionString"].ConnectionString;
-            //objConnection = dbConection;
-            //objCommand = null;
-            //objReader = null;
+            connectionString = ConfigurationManager.ConnectionStrings["SmartSchoolConnectionString"].ConnectionString;
+            objConnection = dbConection;
+            objCommand = null;
+            objReader = null;
         }
 
         private SqlConnection _dbSmartPark;

@@ -15,20 +15,29 @@ namespace BAL.SmartSchool
             _classSetupRepository = classRepository;
         }
 
+        public Message addUpdateExamTimeTable(ExamTimeTable examTimeTable)
+        {
+            return _classSetupRepository.createUpdateExamTimeTable(examTimeTable);
+        }
+
         public Message addUpdateHolidayDetail(Holidays holiday)
         {
-            _classSetupRepository.editHolidays(holiday);
-            throw new NotImplementedException();
+            return _classSetupRepository.createUpdateHolidays(holiday);
         }
 
         public Message addUpdateStudentDetail(Student student)
         {
-            throw new NotImplementedException();
+            return _classSetupRepository.createUpdateStudent(student);
+        }
+
+        public Message addUpdateTimeTable(TimeTable timeTable)
+        {
+            return _classSetupRepository.createUpdateTimeTable(timeTable);
         }
 
         public Message createUpdateDivision(ClassRoom division)
         {
-            throw new NotImplementedException();
+           return _classSetupRepository.createUpdateDivision(division);
         }
 
         public List<ClassRoom> getDivision(int standard, int division)

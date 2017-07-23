@@ -21,13 +21,14 @@ namespace Contract.SmartSchool
         [OperationContract]
         List<Student> getStudentDetail(int schoolId, string fname, string lname, int division);
         [OperationContract]
-        bool addUpdateStudentDetail(Student student);
+        Message addUpdateStudentDetail(Student student);
         [OperationContract]
         Message uploadStudentDetail(List<Student> lstStudent);
         #endregion
 
         #region TimeTable
-        // void addUpdateTimeTable(TimeTable );
+        [OperationContract]
+        Message addUpdateTimeTable(TimeTable timeTable);
         [OperationContract]
         Message uploadTimeTable(List<TimeTable> lstTimeTable);
         [OperationContract]
@@ -38,7 +39,8 @@ namespace Contract.SmartSchool
 
         [OperationContract]
         List<ExamTimeTable> getExamDetailByStandard(int schoolId, int division);
-        //void addUpdateTimetable();
+        [OperationContract]
+        Message addUpdateExamTimeTable(ExamTimeTable examTimeTable);
         [OperationContract]
         Message uploadTimeTableByStandard(List<TimeTable> timeTable);
         #endregion
