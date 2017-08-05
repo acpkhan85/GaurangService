@@ -40,29 +40,29 @@ namespace BAL.SmartSchool
            return _classSetupRepository.createUpdateDivision(division);
         }
 
-        public List<ClassRoom> getDivision(int standard, int division)
+        public List<ClassRoom> getDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords)
         {
-            throw new NotImplementedException();
+            return _classSetupRepository.getDivision(standard, division, pagination, out totalNoOfRecords);
         }
 
-        public List<ExamTimeTable> getExamDetailByStandard(int standard)
+        public List<ExamTimeTable> getExamTimeTable(int classId)
         {
-            throw new NotImplementedException();
+            return _classSetupRepository.getExamTimeTable(classId);
         }
 
         public List<Holidays> getHolidaysDetail(int schoolId)
         {
-            throw new NotImplementedException();
+            return _classSetupRepository.getHolidaysDetail(schoolId);
         }
 
-        public List<Student> getStudent(int studentId)
+        public List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords)
         {
-            throw new NotImplementedException();
+            return _classSetupRepository.getStudent(studentId, classId, pagination, out totalNoOfRecords);
         }
 
-        public List<TimeTable> getTimeTableDetail(int divisionId)
+        public List<TimeTable> getTimeTable(int classId)
         {
-            throw new NotImplementedException();
+            return _classSetupRepository.getTimeTable(classId);
         }
 
         public Message uploadHoliday(List<Holidays> lstHoliday)

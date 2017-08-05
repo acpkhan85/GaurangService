@@ -41,29 +41,29 @@ namespace Service.SmartSchool
             return _class.addUpdateTimeTable(timeTable);
         }
 
-        public List<ExamTimeTable> getExamDetailByStandard(int schoolId, int division)
+        public List<ExamTimeTable> getExamTimeTable(int classId)
         {
-            throw new NotImplementedException();
+            return _class.getExamTimeTable(classId);
         }
 
         public List<Holidays> getHolidayDetail(int shcoolId)
         {
-            throw new NotImplementedException();
+            return _class.getHolidaysDetail(shcoolId);
         }
 
-        public List<ClassRoom> getStandardDivision(int schoolId, int standard, int division)
+        public List<ClassRoom> getStandardDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords)
         {
-            throw new NotImplementedException();
+            return _class.getDivision(standard, division, pagination, out totalNoOfRecords);
         }
 
-        public List<Student> getStudentDetail(int schoolId, string fname, string lname, int division)
+        public List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords)
         {
-            throw new NotImplementedException();
+            return _class.getStudent(studentId, classId, pagination, out totalNoOfRecords);
         }
 
-        public List<TimeTable> getTimeTableByDivsion()
+        public List<TimeTable> getTimeTable(int classId)
         {
-            throw new NotImplementedException();
+            return _class.getTimeTable(classId);
         }
 
         public Message uploadHoliday(List<Holidays> lstHoliday)

@@ -39,6 +39,7 @@ namespace DAL.SmartSchool
             List<ClassRoom> lstclassroom = null;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                totalNoOfRecords = 0;
                 connection.Open();
                 SqlCommand command = new SqlCommand(Helper.sp_GetDivision, connection);
                 command.CommandType = CommandType.StoredProcedure;
@@ -54,6 +55,7 @@ namespace DAL.SmartSchool
                     lstclassroom = new List<ClassRoom>();
                     while (objReader.Read())
                     {
+                        totalNoOfRecords = (int)objReader["TotalCount"];
                         ClassRoom objClassRoom = new ClassRoom();
                         objClassRoom.ClassId = (int)objReader["ClassId"];
                         objClassRoom.Standard = objReader["Standard"].ToString();
@@ -61,7 +63,6 @@ namespace DAL.SmartSchool
                         lstclassroom.Add(objClassRoom);
                     }
                 }
-                totalNoOfRecords = lstclassroom.Count;
             }
             return lstclassroom;
         }
@@ -94,7 +95,36 @@ namespace DAL.SmartSchool
 
             return msg;
         }
-        //public Student getStudent(int studentId) { throw new NotImplementedException(); }
+        public List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords)
+        {
+            List<Student> lstStudent = null;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                totalNoOfRecords = 0;
+                connection.Open();
+                SqlCommand command = new SqlCommand(Helper.sp_GetStudents, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@PageNbr", pagination.PageNumber);
+                command.Parameters.AddWithValue("@PageSize", pagination.PageSize);
+                command.Parameters.AddWithValue("@SortCol", pagination.SortColumn);
+                command.Parameters.AddWithValue("@ClassId", classId);
+                objReader = command.ExecuteReader();
+                if (objReader.HasRows)
+                {
+                    lstStudent = new List<Student>();
+                    while (objReader.Read())
+                    {
+                        totalNoOfRecords = (int)objReader["TotalCount"];
+                        Student objStudent = new Student();
+                        objStudent.FirstName = objReader["FirstName"].ToString();
+                        objStudent.MiddleName = objReader["MiddleName"].ToString();
+                        objStudent.LastName = objReader["LastName"].ToString();
+                        lstStudent.Add(objStudent);
+                    }
+                }
+            }
+            return lstStudent;
+        }
         #endregion
 
         #region TimeTable
@@ -108,7 +138,7 @@ namespace DAL.SmartSchool
                 connection.Open();
                 SqlCommand command = new SqlCommand(Helper.sp_CreateUpdateTimeTables, connection);
                 command.CommandType = CommandType.StoredProcedure;
-                
+
                 command.Parameters.AddWithValue("@TimeTableID", timeTable.TimeTableID);
                 command.Parameters.AddWithValue("@ClassId", timeTable.ClassId);
                 command.Parameters.AddWithValue("@Mon", timeTable.Mon);
@@ -127,7 +157,37 @@ namespace DAL.SmartSchool
 
             return msg;
         }
-        //public List<TimeTable> getTimeTableDetail(int divisionId) { throw new NotImplementedException(); }
+        public List<TimeTable> getTimeTable(int classId)
+        {
+            List<TimeTable> lstTimeTable = null;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Helper.sp_GetTimeTable, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ClassId", classId);
+                objReader = command.ExecuteReader();
+                if (objReader.HasRows)
+                {
+                    lstTimeTable = new List<TimeTable>();
+                    while (objReader.Read())
+                    {
+                        TimeTable objTimeTable = new TimeTable();
+                        objTimeTable.TimeTableID = (int)objReader["TimeTableID"];
+                        objTimeTable.ClassId = (int)objReader["ClassId"];
+                        objTimeTable.Mon = objReader["Mon"].ToString();
+                        objTimeTable.Tue = objReader["Tue"].ToString();
+                        objTimeTable.Wed = objReader["Wed"].ToString();
+                        objTimeTable.Thu = objReader["Thu"].ToString();
+                        objTimeTable.Fri = objReader["Fri"].ToString();
+                        objTimeTable.Sat = objReader["Sat"].ToString();
+                        objTimeTable.Sun = objReader["Sun"].ToString();
+                        lstTimeTable.Add(objTimeTable);
+                    }
+                }
+            }
+            return lstTimeTable;
+        }
         #endregion
 
         #region ExamTimeTable
@@ -140,7 +200,7 @@ namespace DAL.SmartSchool
                 msg = new Message();
                 connection.Open();
                 SqlCommand command = new SqlCommand(Helper.sp_CreateUpdateExamTimeTables, connection);
-                command.CommandType = CommandType.StoredProcedure;                
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@ExamTimeTableID", timeTable.ExamTimeTableID);
                 command.Parameters.AddWithValue("@ClassId", timeTable.ClassId);
                 command.Parameters.AddWithValue("@Subject", timeTable.Subject);
@@ -158,7 +218,36 @@ namespace DAL.SmartSchool
 
             return msg;
         }
-        //public List<ExamTimeTable> getExamTimeTableDetail(int standard) { throw new NotImplementedException(); }
+        public List<ExamTimeTable> getExamTimeTable(int classId)
+        {
+            List<ExamTimeTable> lstExamTimeTable = null;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Helper.sp_GetExamTimeTable, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ClassId", classId);
+                objReader = command.ExecuteReader();
+                if (objReader.HasRows)
+                {
+                    lstExamTimeTable = new List<ExamTimeTable>();
+                    while (objReader.Read())
+                    {
+                        ExamTimeTable objExamTimeTable = new ExamTimeTable();
+                        objExamTimeTable.ExamTimeTableID = objReader["ExamTimeTableID"].ToString();
+                        objExamTimeTable.ClassId = (int)objReader["ClassId"];
+                        objExamTimeTable.Subject = objReader["Subject"].ToString();
+                        objExamTimeTable.FromDate = objReader["FromDate"].ToString();
+                        objExamTimeTable.FromTime = objReader["FromTime"].ToString();
+                        objExamTimeTable.ToTime = objReader["ToTime"].ToString();
+                        objExamTimeTable.Location = objReader["Location"].ToString();
+                        objExamTimeTable.Batch = objReader["Batch"].ToString();
+                        lstExamTimeTable.Add(objExamTimeTable);
+                    }
+                }
+            }
+            return lstExamTimeTable;
+        }
         #endregion
 
         #region Holidays
@@ -187,7 +276,33 @@ namespace DAL.SmartSchool
 
             return msg;
         }
-        //public List<Holidays> getHolidaysDetail(int schoolId) { throw new NotImplementedException(); }
+        public List<Holidays> getHolidaysDetail(int schoolId)
+        {
+            List<Holidays> lstHolidays = null;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Helper.sp_GetExamTimeTable, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@SchoolId", schoolId);
+                objReader = command.ExecuteReader();
+                if (objReader.HasRows)
+                {
+                    lstHolidays = new List<Holidays>();
+                    while (objReader.Read())
+                    {
+                        Holidays objHolidays = new Holidays();
+                        objHolidays.HolidaysId = objReader["HolidaysId"].ToString(); 
+                        objHolidays.FromDate = objReader["FromDate"].ToString();
+                        objHolidays.ToDate = objReader["ToDate"].ToString();
+                        objHolidays.Festival = objReader["Fest"].ToString();
+                        objHolidays.Notes = objReader["Notes"].ToString();
+                        lstHolidays.Add(objHolidays);
+                    }
+                }
+            }
+            return lstHolidays;
+        }
         #endregion
     }
 }

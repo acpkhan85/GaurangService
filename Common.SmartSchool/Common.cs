@@ -13,8 +13,14 @@
 
         public static readonly string sp_GetStudents = "USP_GetAllStudent";
         public static readonly string sp_CreateUpdateStudents = "usp_CU_Students";
+
+        public static readonly string sp_GetTimeTable = "USP_GetTimeTable";
         public static readonly string sp_CreateUpdateTimeTables = "usp_CU_TimeTables";
+
+        public static readonly string sp_GetExamTimeTable = "USP_GetExamTimeTable";
         public static readonly string sp_CreateUpdateExamTimeTables = "usp_CU_ExamTimeTables";
+
+        public static readonly string sp_GetHoliday = "USP_GetAllHolidays";
         public static readonly string sp_CreateUpdateHolidays = "usp_CU_Holidays";
     }
 

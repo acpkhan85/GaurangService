@@ -7,28 +7,28 @@ namespace DAL.SmartSchool.Interface
     {
         #region Divion Setup
         Message createUpdateDivision(ClassRoom division);
-        //ClassRoom getDivision(int standard, int division);
+        List<ClassRoom> getDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords);
 
         #endregion
 
         #region Set up studnet
         Message createUpdateStudent(Student student);
-        //Student getStudent(int studentId);
+        List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords);
         #endregion
 
         #region TimeTable
         Message createUpdateTimeTable(TimeTable timeTable);
-        //List<TimeTable> getTimeTableDetail(int divisionId);
+        List<TimeTable> getTimeTable(int classId);
         #endregion
 
         #region ExamTimeTable
         Message createUpdateExamTimeTable(ExamTimeTable timeTable);
-        //List<ExamTimeTable> getExamTimeTableDetail(int standard);
+        List<ExamTimeTable> getExamTimeTable(int classId);
         #endregion
 
         #region Holidays
         Message createUpdateHolidays(Holidays holiday);
-        //List<Holidays> getHolidaysDetail(int schoolId);
+        List<Holidays> getHolidaysDetail(int schoolId);
         #endregion
     }
 }

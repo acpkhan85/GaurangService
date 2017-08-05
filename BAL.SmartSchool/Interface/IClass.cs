@@ -7,26 +7,26 @@ namespace BAL.SmartSchool.Interface
     {
         #region Divion Setup
         Message createUpdateDivision(ClassRoom division);
-        List<ClassRoom> getDivision(int standard, int division);
+        List<ClassRoom> getDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords);
 
         #endregion
 
         #region Set up studnet
         Message addUpdateStudentDetail(Student student);
-        List<Student> getStudent(int studentId);
+        List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords);
         Message uploadStudentDetail(List<Student> lstStudent);
         #endregion
 
         #region TimeTable
         Message addUpdateTimeTable(TimeTable timeTable);
         Message uploadTimeTable(TimeTable timeTable);
-        List<TimeTable> getTimeTableDetail(int divisionId);
+        List<TimeTable> getTimeTable(int classId);
         #endregion
 
         #region ExamTimeTable
         Message addUpdateExamTimeTable(ExamTimeTable examTimeTable);
         Message uploadTimeTableByStandard(ExamTimeTable timeTable);
-        List<ExamTimeTable> getExamDetailByStandard(int standard);
+        List<ExamTimeTable> getExamTimeTable(int classId);
         #endregion
 
         #region Holidays

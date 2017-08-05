@@ -13,13 +13,12 @@ namespace Contract.SmartSchool
         [OperationContract]
         Message addUpdateStandrdDivision(ClassRoom classRoomDetail);
         [OperationContract]
-        List<ClassRoom> getStandardDivision(int schoolId, int standard, int division);
-
+        List<ClassRoom> getStandardDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords);
         #endregion
 
         #region StudentSetup
         [OperationContract]
-        List<Student> getStudentDetail(int schoolId, string fname, string lname, int division);
+        List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords);
         [OperationContract]
         Message addUpdateStudentDetail(Student student);
         [OperationContract]
@@ -32,13 +31,13 @@ namespace Contract.SmartSchool
         [OperationContract]
         Message uploadTimeTable(List<TimeTable> lstTimeTable);
         [OperationContract]
-        List<TimeTable> getTimeTableByDivsion();
+        List<TimeTable> getTimeTable(int classId);
         #endregion
 
         #region Exam
 
         [OperationContract]
-        List<ExamTimeTable> getExamDetailByStandard(int schoolId, int division);
+        List<ExamTimeTable> getExamTimeTable(int classId);
         [OperationContract]
         Message addUpdateExamTimeTable(ExamTimeTable examTimeTable);
         [OperationContract]
