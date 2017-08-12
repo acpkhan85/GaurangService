@@ -22,6 +22,12 @@
 
         public static readonly string sp_GetHoliday = "USP_GetAllHolidays";
         public static readonly string sp_CreateUpdateHolidays = "usp_CU_Holidays";
+
+        public static readonly string sp_GetEvents = "USP_GetAllEvents";
+        public static readonly string sp_CreateUpdateEvents = "usp_CU_Events";
+
+        public static readonly string sp_GetNews = "USP_GetAllNews";
+        public static readonly string sp_CreateUpdateNews = "usp_CU_LatestNews";
     }
 
 }

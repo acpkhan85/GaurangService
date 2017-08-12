@@ -84,8 +84,8 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@ClassId", student.ClassId);
                 command.Parameters.AddWithValue("@FirstName", student.FirstName);
                 command.Parameters.AddWithValue("@MiddleName", student.MiddleName);
-                command.Parameters.AddWithValue("@LastName", student.CreateBy);
-                command.Parameters.AddWithValue("@BloodGroup", student.UpdatedBy);
+                command.Parameters.AddWithValue("@LastName", student.LastName);
+                command.Parameters.AddWithValue("@BloodGroup", student.BloodGroup);
                 command.Parameters.AddWithValue("@CreateBy", student.CreateBy);
                 command.Parameters.AddWithValue("@UpdatedBy", student.UpdatedBy);
                 command.Parameters.AddWithValue("@CreatedDate", student.CreatedDate);

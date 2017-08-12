@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassSetup.cs" />
+    <Compile Include="EventsAndNews.cs" />
     <Compile Include="Interface\IClass.cs" />
+    <Compile Include="Interface\IEventsAnNews.cs" />
     <Compile Include="Interface\IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />

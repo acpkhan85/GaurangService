@@ -330,4 +330,27 @@ namespace Entity.SmartSchool
         public int PageSize { get; set; }
         public string SortColumn { get; set; }
     }
+
+    #region Events and news
+    public class Events : BaseClass
+    {
+        public int EventId { get; set; }
+        public string Header { get; set; }
+        public string LocationImage { get; set; }
+        public string EventDescription { get; set; }
+        public string Location { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public int SchoolId { get; set; }
+    }
+
+    public class News: BaseClass
+    {
+        public int newsId { get; set; }
+        public string Image { get; set; }
+        public string Header { get; set; }
+        public string NewsDescription { get; set; }
+        public int SchoolId { get; set; }
+    }
+    #endregion
 }

@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClassSetupService.svc" />
+    <Content Include="EventsAndNewsService.svc" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="UserService.svc" />
@@ -168,6 +169,9 @@
   <ItemGroup>
     <Compile Include="ClassSetupService.svc.cs">
       <DependentUpon>ClassSetupService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="EventsAndNewsService.svc.cs">
+      <DependentUpon>EventsAndNewsService.svc</DependentUpon>
     </Compile>
     <Compile Include="UserService.svc.cs">
       <DependentUpon>UserService.svc</DependentUpon>

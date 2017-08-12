@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="ClassRepository.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="EventsAndNewsRepository.cs" />
     <Compile Include="Interface\IClassRepository.cs" />
     <Compile Include="Interface\ICMSRepository.cs" />
+    <Compile Include="Interface\IEventsAndNewsRepository.cs" />
     <Compile Include="Interface\ISchoolProviderRepository.cs" />
     <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

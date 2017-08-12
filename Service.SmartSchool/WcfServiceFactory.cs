@@ -19,6 +19,10 @@ namespace Service.SmartSchool
             container.RegisterType<IClass, ClassSetup>();
             container.RegisterType<IClassRepository, ClassRepository>();
             container.RegisterType<IClassSetupService, ClassSetupService>();
+
+            container.RegisterType<IEventsAndNews, EventsAndNews>();
+            container.RegisterType<IEventsAndNewsRepository, EventsAndNewsRepository>();
+            container.RegisterType<IEventsAndNewsService, EventsAndNewsService>();
         }
     }    
 }
