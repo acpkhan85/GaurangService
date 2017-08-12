@@ -353,4 +353,19 @@ namespace Entity.SmartSchool
         public int SchoolId { get; set; }
     }
     #endregion
+
+    #region About
+    public class Staff : BaseClass
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string ImagePath { get; set; }
+        public string LastName { get; set; }
+        public int SchoolId { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public string Designation { get; set; }
+    }
+    #endregion
 }

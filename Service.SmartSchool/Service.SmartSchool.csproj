@@ -159,6 +159,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutService.svc" />
     <Content Include="ClassSetupService.svc" />
     <Content Include="EventsAndNewsService.svc" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
@@ -167,6 +168,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutService.svc.cs">
+      <DependentUpon>AboutService.svc</DependentUpon>
+    </Compile>
     <Compile Include="ClassSetupService.svc.cs">
       <DependentUpon>ClassSetupService.svc</DependentUpon>
     </Compile>

@@ -23,6 +23,10 @@ namespace Service.SmartSchool
             container.RegisterType<IEventsAndNews, EventsAndNews>();
             container.RegisterType<IEventsAndNewsRepository, EventsAndNewsRepository>();
             container.RegisterType<IEventsAndNewsService, EventsAndNewsService>();
+
+            container.RegisterType<IAbout, About>();
+            container.RegisterType<IAboutRepository, AboutRepository>();
+            container.RegisterType<IAboutService, AboutService>();
         }
     }    
 }

@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs" />
     <Compile Include="ClassSetup.cs" />
     <Compile Include="EventsAndNews.cs" />
+    <Compile Include="Interface\IAbout.cs" />
     <Compile Include="Interface\IClass.cs" />
     <Compile Include="Interface\IEventsAnNews.cs" />
     <Compile Include="Interface\IUser.cs" />

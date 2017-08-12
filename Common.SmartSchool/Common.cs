@@ -28,6 +28,9 @@
 
         public static readonly string sp_GetNews = "USP_GetAllNews";
         public static readonly string sp_CreateUpdateNews = "usp_CU_LatestNews";
+
+        public static readonly string sp_GetSchoolStaff = "USP_GetAllSchoolStaff";
+        public static readonly string sp_CreateUpdateSchoolStaff = "usp_CU_SchoolStaff";
     }
 
 }
