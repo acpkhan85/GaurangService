@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entity.SmartSchool
 {
+    public class MessageDTO
+    {
+        public string message { get; set; }
+        public int status { get; set; }
+    }
+
     public class ClassRoomDto
     {
         public int ClassId { get; set; }
