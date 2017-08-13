@@ -13,7 +13,7 @@ namespace Contract.SmartSchool
         [OperationContract]
         Message addUpdateStandrdDivision(ClassRoom classRoomDetail);
         [OperationContract]
-        List<ClassRoom> getStandardDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords);
+        List<ClassRoom> getStandardDivision(int standard, int division, int schoolId, Pagination pagination, out int totalNoOfRecords);
         #endregion
 
         #region StudentSetup

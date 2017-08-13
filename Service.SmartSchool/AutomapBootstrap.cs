@@ -13,8 +13,18 @@ namespace Service.SmartSchool
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap< Message, MessageDTO>();
+
+                //souce==>Destination
+                cfg.CreateMap<Message, MessageDTO>();
+
+
+
+                #region Class
                 cfg.CreateMap<ClassRoomDto, ClassRoom>();
+                cfg.CreateMap<List<ExamTimeTable>, List<ExamTimeTableDto>>();
+
+                #endregion
+
             });
         }
     }

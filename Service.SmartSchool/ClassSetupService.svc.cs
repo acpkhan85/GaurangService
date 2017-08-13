@@ -7,6 +7,7 @@ using Entity.SmartSchool;
 namespace Service.SmartSchool
 {
 
+    [AutomapServiceBehavior]
     public class ClassSetupService : IClassSetupService
     {
         IClass _class;
@@ -51,9 +52,9 @@ namespace Service.SmartSchool
             return _class.getHolidaysDetail(shcoolId);
         }
 
-        public List<ClassRoom> getStandardDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords)
+        public List<ClassRoom> getStandardDivision(int standard, int division, int schoolId, Pagination pagination, out int totalNoOfRecords)
         {
-            return _class.getDivision(standard, division, pagination, out totalNoOfRecords);
+            return _class.getDivision(standard, division, schoolId, pagination, out totalNoOfRecords);
         }
 
         public List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords)

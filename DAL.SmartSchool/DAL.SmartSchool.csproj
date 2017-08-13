@@ -49,8 +49,12 @@
     <Compile Include="Interface\IClassRepository.cs" />
     <Compile Include="Interface\ICMSRepository.cs" />
     <Compile Include="Interface\IEventsAndNewsRepository.cs" />
+    <Compile Include="Interface\INoticeBoardRepository.cs" />
+    <Compile Include="Interface\IBackOfficeRepository.cs" />
     <Compile Include="Interface\ISchoolProviderRepository.cs" />
     <Compile Include="Interface\IUserRepository.cs" />
+    <Compile Include="NoticeBoardRepository.cs" />
+    <Compile Include="BackOfficeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchooProviderRepository.cs" />
     <Compile Include="UserRepository.cs" />

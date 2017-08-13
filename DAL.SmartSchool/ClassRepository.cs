@@ -34,7 +34,7 @@ namespace DAL.SmartSchool
 
             return msg;
         }
-        public List<ClassRoom> getDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords)
+        public List<ClassRoom> getDivision(int standard, int division,int schoolId, Pagination pagination, out int totalNoOfRecords)
         {
             List<ClassRoom> lstclassroom = null;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -46,7 +46,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@PageNbr", pagination.PageNumber);
                 command.Parameters.AddWithValue("@PageSize", pagination.PageSize);
                 command.Parameters.AddWithValue("@SortCol", pagination.SortColumn);
-                command.Parameters.AddWithValue("@SchoolId", pagination.SchoolId);
+                command.Parameters.AddWithValue("@SchoolId", schoolId);
                 command.Parameters.AddWithValue("@Division", division);
                 command.Parameters.AddWithValue("@Standard", standard);
                 objReader = command.ExecuteReader();

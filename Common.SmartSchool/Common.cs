@@ -31,6 +31,12 @@
 
         public static readonly string sp_GetSchoolStaff = "USP_GetAllSchoolStaff";
         public static readonly string sp_CreateUpdateSchoolStaff = "usp_CU_SchoolStaff";
+
+        public static readonly string sp_GetNoticeBoard = "usp_CU_NoticeBoard";
+        public static readonly string sp_CreateUpdateNoticeBoard = "usp_CU_NoticeBoard";
+
+        public static readonly string sp_GetProcessDocuments = "USP_GetAllSchoolStaff";
+        public static readonly string sp_CreateUpdateProcessDocuments = "usp_CU_ProcessDocument";
     }
 
 }

@@ -143,4 +143,26 @@ namespace Entity.SmartSchool
     }
 
     #endregion
+
+    #region Notice Board
+    public class NoticeBoardDto
+    {
+        public int Id { get; set; }
+        public int ClassId { get; set; }
+        public int DivisionId { get; set; }
+        [Required]
+        public string Description { get; set; }
+    }
+    #endregion
+
+    #region Process document
+    public class ProcessDocumentDto
+    {
+        public int Id { get; set; }
+        public int StudentId { get; set; }
+        public string Application { get; set; }
+        public int Status { get; set; }
+        public string Notes { get; set; }
+    }
+    #endregion
 }

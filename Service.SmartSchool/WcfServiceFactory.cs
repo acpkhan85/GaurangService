@@ -27,6 +27,14 @@ namespace Service.SmartSchool
             container.RegisterType<IAbout, About>();
             container.RegisterType<IAboutRepository, AboutRepository>();
             container.RegisterType<IAboutService, AboutService>();
+
+            container.RegisterType<INoticeBoard, NoticeBoard>();
+            container.RegisterType<INoticeBoardRepository, NoticeBoardRepository>();
+            container.RegisterType<INoticeBoardService, NoticeBoardService>();
+
+            container.RegisterType<IBackOffice, BackOffice>();
+            container.RegisterType<IBackOfficeRepository, BackOfficeRepository>();
+            container.RegisterType<IBackOfficeService, BackOfficeService>();
         }
     }    
 }

@@ -369,4 +369,25 @@ namespace Entity.SmartSchool
         public string Designation { get; set; }
     }
     #endregion
+
+    #region Notice Board
+    public class NoticeDashBoard : BaseClass
+    {
+        public int Id { get; set; }
+        public int ClassId { get; set; }
+        public int DivisionId { get; set; }
+        public string Description { get; set; }
+    }
+    #endregion
+
+    #region Process document
+    public class ProcessDocument : BaseClass
+    {
+        public int Id { get; set; }
+        public int StudentId { get; set; }
+        public string Application { get; set; }
+        public int Status { get; set; }
+        public string Notes { get; set; }
+    }
+    #endregion
 }

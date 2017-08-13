@@ -7,7 +7,7 @@ namespace DAL.SmartSchool.Interface
     {
         #region Divion Setup
         Message createUpdateDivision(ClassRoom division);
-        List<ClassRoom> getDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords);
+        List<ClassRoom> getDivision(int standard, int division,int schoolId, Pagination pagination, out int totalNoOfRecords);
 
         #endregion
 

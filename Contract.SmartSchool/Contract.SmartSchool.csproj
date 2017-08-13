@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAboutService.cs" />
+    <Compile Include="IBackOfficeService.cs" />
     <Compile Include="IClassSetupService.cs" />
     <Compile Include="ICms.cs" />
     <Compile Include="IEventsAndNewsService.cs" />
+    <Compile Include="INoticeBoardService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

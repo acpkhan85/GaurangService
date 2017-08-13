@@ -40,9 +40,9 @@ namespace BAL.SmartSchool
            return _classSetupRepository.createUpdateDivision(division);
         }
 
-        public List<ClassRoom> getDivision(int standard, int division, Pagination pagination, out int totalNoOfRecords)
+        public List<ClassRoom> getDivision(int standard, int division,int schoolId, Pagination pagination, out int totalNoOfRecords)
         {
-            return _classSetupRepository.getDivision(standard, division, pagination, out totalNoOfRecords);
+            return _classSetupRepository.getDivision(standard, division, schoolId, pagination, out totalNoOfRecords);
         }
 
         public List<ExamTimeTable> getExamTimeTable(int classId)
