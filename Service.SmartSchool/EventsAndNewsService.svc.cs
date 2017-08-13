@@ -7,9 +7,11 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Entity.SmartSchool;
+using AutoMapper;
 
 namespace Service.SmartSchool
 {
+    [AutomapServiceBehavior]
     public class EventsAndNewsService : IEventsAndNewsService
     {
         IEventsAndNews _eventsAndNews;
@@ -19,9 +21,11 @@ namespace Service.SmartSchool
             _eventsAndNews = EventsAndNews;
         }
 
-        public Message addUpdateEvents(Events events)
+        public MessageDTO addUpdateEvents(Events events)
         {
-            return _eventsAndNews.addUpdateEvents(events);
+            Message msg = _eventsAndNews.addUpdateEvents(events);
+            var result = Mapper.Map<Message, MessageDTO>(msg);
+            return result;
         }
 
         public Message addUpdateNews(News news)

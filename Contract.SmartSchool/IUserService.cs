@@ -8,7 +8,7 @@ namespace Contract.SmartSchool
     public interface IUserService
     {       
         [OperationContract]
-        Message createUpdateUser(Employee user);
+        MessageDTO createUpdateUser(Employee user);
 
         [OperationContract]
         List<Employee> getUser(int schoolId);       

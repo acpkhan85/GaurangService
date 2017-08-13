@@ -13,7 +13,7 @@ namespace Contract.SmartSchool
     {
         #region Events
         [OperationContract]
-        Message addUpdateEvents(Events events);
+        MessageDTO addUpdateEvents(Events events);
         [OperationContract]
         List<Events> getEvents(int schoolId, Pagination pagination, out int totalNoOfRecords);
         #endregion
