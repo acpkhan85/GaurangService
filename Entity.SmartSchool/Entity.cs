@@ -324,11 +324,12 @@ namespace Entity.SmartSchool
         warning
     }
 
-    public class Pagination : SchoolBase
+    public class Pagination
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
         public string SortColumn { get; set; }
+        public int TotalCount { get; set; }
     }
 
     #region Events and news
