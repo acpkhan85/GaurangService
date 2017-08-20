@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ServiceModel;
 using Entity.SmartSchool;
 
+
 namespace Contract.SmartSchool
 {
     [ServiceContract]
@@ -13,7 +14,7 @@ namespace Contract.SmartSchool
         [OperationContract]
         Message addUpdateStandrdDivision(ClassRoom classRoomDetail);
         [OperationContract]
-        List<ClassRoom> getStandardDivision(int standard, int division, int schoolId, Pagination pagination, out int totalNoOfRecords);
+        List<ClassRoomDto> getStandardDivision(int? standard, int? division, int schoolId, Pagination pagination, out int totalNoOfRecords);
         #endregion
 
         #region StudentSetup

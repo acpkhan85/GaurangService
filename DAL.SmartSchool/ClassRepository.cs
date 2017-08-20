@@ -34,7 +34,7 @@ namespace DAL.SmartSchool
 
             return msg;
         }
-        public List<ClassRoom> getDivision(int standard, int division,int schoolId, Pagination pagination, out int totalNoOfRecords)
+        public List<ClassRoom> getDivision(int? standard, int? division,int schoolId, Pagination pagination, out int totalNoOfRecords)
         {
             List<ClassRoom> lstclassroom = null;
             using (SqlConnection connection = new SqlConnection(connectionString))
