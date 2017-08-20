@@ -52,9 +52,11 @@ namespace Service.SmartSchool
             return _class.getHolidaysDetail(shcoolId);
         }
 
-        public List<ClassRoom> getStandardDivision(int standard, int division, int schoolId, Pagination pagination, out int totalNoOfRecords)
+        public List<ClassRoomDto> getStandardDivision(int? standard, int? division, int schoolId, Pagination pagination, out int totalNoOfRecords)
         {
-            return _class.getDivision(standard, division, schoolId, pagination, out totalNoOfRecords);
+            var result = _class.getDivision(standard, division, schoolId, pagination, out totalNoOfRecords);
+            List<ClassRoomDto> clsDto = AutoMapper.Mapper.Map<List<ClassRoom>, List<ClassRoomDto>>(result);
+            return clsDto;
         }
 
         public List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords)
@@ -86,5 +88,7 @@ namespace Service.SmartSchool
         {
             throw new NotImplementedException();
         }
+
+  
     }
 }
