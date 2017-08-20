@@ -330,6 +330,7 @@ namespace Entity.SmartSchool
         public int PageSize { get; set; }
         public string SortColumn { get; set; }
         public int TotalCount { get; set; }
+        public int Skip { get; set; }
     }
 
     #region Events and news

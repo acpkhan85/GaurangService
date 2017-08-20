@@ -13,18 +13,18 @@ namespace Service.SmartSchool
         {
             Mapper.Initialize(cfg =>
             {
-
-                //souce==>Destination
                 cfg.CreateMap<Message, MessageDTO>();
 
-
-
                 #region Class
-                cfg.CreateMap<ClassRoomDto, ClassRoom>();
-                cfg.CreateMap<List<ExamTimeTable>, List<ExamTimeTableDto>>();
-
+                cfg.CreateMap<ClassRoomDto, ClassRoom>().ReverseMap();
+                cfg.CreateMap<StudentDto, Student>().ReverseMap();
+                cfg.CreateMap<TimeTableDto, TimeTable>().ReverseMap();
+                cfg.CreateMap<ExamTimeTableDto, ExamTimeTable>().ReverseMap();
+                cfg.CreateMap<HolidaysDto, Holidays>().ReverseMap();
+                cfg.CreateMap<ProcessDocumentDto, ProcessDocument>().ReverseMap();
+                cfg.CreateMap<EventsDto, Events>().ReverseMap();
+                cfg.CreateMap<NewsDto, News>().ReverseMap();
                 #endregion
-
             });
         }
     }

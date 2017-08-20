@@ -42,31 +42,50 @@ namespace Service.SmartSchool
             return _class.addUpdateTimeTable(timeTable);
         }
 
-        public List<ExamTimeTable> getExamTimeTable(int classId)
+        public List<ExamTimeTableDto> getExamTimeTable(int classId)
         {
-            return _class.getExamTimeTable(classId);
+            var result = _class.getExamTimeTable(classId);
+            List<ExamTimeTableDto> holidaysList = AutoMapper.Mapper.Map<List<ExamTimeTable>, List<ExamTimeTableDto>>(result);
+            return holidaysList;
         }
 
-        public List<Holidays> getHolidayDetail(int shcoolId)
+        public List<HolidaysDto> getHolidayDetail(int shcoolId)
         {
-            return _class.getHolidaysDetail(shcoolId);
+            var result = _class.getHolidaysDetail(shcoolId);
+            List<HolidaysDto> holidaysList = AutoMapper.Mapper.Map<List<Holidays>, List<HolidaysDto>>(result);
+            return holidaysList;
         }
 
-        public List<ClassRoomDto> getStandardDivision(int? standard, int? division, int schoolId, Pagination pagination, out int totalNoOfRecords)
+        public ClassRoomCollection getStandardDivision(int? standard, int? division, int schoolId, Pagination pagination)
         {
+            int totalNoOfRecords = 0;
             var result = _class.getDivision(standard, division, schoolId, pagination, out totalNoOfRecords);
             List<ClassRoomDto> clsDto = AutoMapper.Mapper.Map<List<ClassRoom>, List<ClassRoomDto>>(result);
-            return clsDto;
+
+            ClassRoomCollection collection = new ClassRoomCollection();
+            collection.TotalCount = totalNoOfRecords;
+            collection.ClassRoom = clsDto;
+            return collection;
         }
 
-        public List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords)
+        public StudentCollection getStudent(int studentId, int classId, Pagination pagination)
         {
-            return _class.getStudent(studentId, classId, pagination, out totalNoOfRecords);
+            int totalNoOfRecords = 0;
+            var result = _class.getStudent(studentId, classId, pagination, out totalNoOfRecords);
+            List<StudentDto> studentDto = AutoMapper.Mapper.Map<List<Student>, List<StudentDto>>(result);
+
+            StudentCollection collection = new StudentCollection();
+            collection.TotalCount = totalNoOfRecords;
+            collection.StudentList = studentDto;
+            return collection;
         }
 
-        public List<TimeTable> getTimeTable(int classId)
+        public List<TimeTableDto> getTimeTable(int classId)
         {
-            return _class.getTimeTable(classId);
+            var result = _class.getTimeTable(classId);
+            List<TimeTableDto> timeTableist = AutoMapper.Mapper.Map<List<TimeTable>, List<TimeTableDto>>(result);
+
+            return timeTableist;
         }
 
         public Message uploadHoliday(List<Holidays> lstHoliday)
@@ -89,6 +108,6 @@ namespace Service.SmartSchool
             throw new NotImplementedException();
         }
 
-  
+
     }
 }

@@ -14,12 +14,12 @@ namespace Contract.SmartSchool
         [OperationContract]
         Message addUpdateStandrdDivision(ClassRoom classRoomDetail);
         [OperationContract]
-        List<ClassRoomDto> getStandardDivision(int? standard, int? division, int schoolId, Pagination pagination, out int totalNoOfRecords);
+        ClassRoomCollection getStandardDivision(int? standard, int? division, int schoolId, Pagination pagination);
         #endregion
 
         #region StudentSetup
         [OperationContract]
-        List<Student> getStudent(int studentId, int classId, Pagination pagination, out int totalNoOfRecords);
+        StudentCollection getStudent(int studentId, int classId, Pagination pagination);
         [OperationContract]
         Message addUpdateStudentDetail(Student student);
         [OperationContract]
@@ -32,13 +32,13 @@ namespace Contract.SmartSchool
         [OperationContract]
         Message uploadTimeTable(List<TimeTable> lstTimeTable);
         [OperationContract]
-        List<TimeTable> getTimeTable(int classId);
+        List<TimeTableDto> getTimeTable(int classId);
         #endregion
 
         #region Exam
 
         [OperationContract]
-        List<ExamTimeTable> getExamTimeTable(int classId);
+        List<ExamTimeTableDto> getExamTimeTable(int classId);
         [OperationContract]
         Message addUpdateExamTimeTable(ExamTimeTable examTimeTable);
         [OperationContract]
@@ -49,7 +49,7 @@ namespace Contract.SmartSchool
         [OperationContract]
         Message addUpdateHolidayDetail(Holidays holiday);
         [OperationContract]
-        List<Holidays> getHolidayDetail(int shcoolId);
+        List<HolidaysDto> getHolidayDetail(int shcoolId);
         [OperationContract]
         Message uploadHoliday(List<Holidays> lstHoliday);
         #endregion

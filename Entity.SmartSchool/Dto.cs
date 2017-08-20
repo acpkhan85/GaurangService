@@ -12,18 +12,18 @@ namespace Entity.SmartSchool
         public string message { get; set; }
         public int status { get; set; }
     }
-
     public class ClassRoomDto
     {
         public int ClassId { get; set; }
-        [Required(ErrorMessage ="This field is required")]
-        [StringLength(1,ErrorMessage ="Max length is 1")]
+        [Required(ErrorMessage = "This field is required")]
+        [StringLength(1, ErrorMessage = "Max length is 1")]
         public string Standard { get; set; }
         [Required(ErrorMessage = "This field is required")]
         public string Division { get; set; }
 
         public string Actions { get; set; }
     }
+
     public class StudentDto
     {
         public int StudentId { get; set; }
@@ -166,6 +166,21 @@ namespace Entity.SmartSchool
         public string Application { get; set; }
         public int Status { get; set; }
         public string Notes { get; set; }
+    }
+    #endregion
+
+    #region Collections
+    public class BaseDTOCollection
+    {
+        public int TotalCount { get; set; }
+    }
+    public class ClassRoomCollection : BaseDTOCollection
+    {
+        public List<ClassRoomDto> ClassRoom { get; set; }
+    }
+    public class StudentCollection : BaseDTOCollection
+    {
+        public List<StudentDto> StudentList { get; set; }
     }
     #endregion
 }
