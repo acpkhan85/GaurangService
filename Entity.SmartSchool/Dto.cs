@@ -16,10 +16,13 @@ namespace Entity.SmartSchool
     public class ClassRoomDto
     {
         public int ClassId { get; set; }
-        [Required]
+        [Required(ErrorMessage ="This field is required")]
+        [StringLength(1,ErrorMessage ="Max length is 1")]
         public string Standard { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string Division { get; set; }
+
+        public string Actions { get; set; }
     }
     public class StudentDto
     {
