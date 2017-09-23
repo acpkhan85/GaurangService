@@ -166,6 +166,7 @@
     <Content Include="AboutService.svc" />
     <Content Include="BackOfficeService.svc" />
     <Content Include="ClassSetupService.svc" />
+    <Content Include="DashboardService.svc" />
     <Content Include="EventsAndNewsService.svc" />
     <Content Include="NoticeBoardService.svc" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
@@ -184,6 +185,10 @@
     </Compile>
     <Compile Include="ClassSetupService.svc.cs">
       <DependentUpon>ClassSetupService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMapper\DashboardDTOMapper.cs" />
+    <Compile Include="DashboardService.svc.cs">
+      <DependentUpon>DashboardService.svc</DependentUpon>
     </Compile>
     <Compile Include="EventsAndNewsService.svc.cs">
       <DependentUpon>EventsAndNewsService.svc</DependentUpon>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using Entity.SmartSchool;
+using Service.SmartSchool.CustomMapper;
 
 namespace Service.SmartSchool
 {
@@ -23,7 +24,9 @@ namespace Service.SmartSchool
                 cfg.CreateMap<HolidaysDto, Holidays>().ReverseMap();
                 cfg.CreateMap<ProcessDocumentDto, ProcessDocument>().ReverseMap();
                 cfg.CreateMap<EventsDto, Events>().ReverseMap();
-                cfg.CreateMap<NewsDto, News>().ReverseMap();
+                cfg.CreateMap<Events, EventsDto>().ReverseMap();
+                cfg.CreateMap<NewsDto, News>();
+                cfg.CreateMap<News, NewsDto>();                
                 #endregion
             });
         }

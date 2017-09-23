@@ -35,6 +35,10 @@ namespace Service.SmartSchool
             container.RegisterType<IBackOffice, BackOffice>();
             container.RegisterType<IBackOfficeRepository, BackOfficeRepository>();
             container.RegisterType<IBackOfficeService, BackOfficeService>();
+
+            container.RegisterType<IDashboard, Dashboard>();
+            container.RegisterType<IDashboardRepository, DashboardRepository>();
+            container.RegisterType<IDashboardService, DashboardService>();
         }
     }    
 }

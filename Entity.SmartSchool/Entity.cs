@@ -391,4 +391,28 @@ namespace Entity.SmartSchool
         public string Notes { get; set; }
     }
     #endregion
+
+    #region Dashboard
+    public class Dashboard
+    {
+        public int TotalStudents { get; set; }
+        public int TotalAbsentStudents { get; set; }
+        public int TotalBackOfficeApplications { get; set; }
+        public int TotalStaff { get; set; }
+        public List<Division> Divisions { get; set; }
+        public List<Events> Events { get; set; }
+        public List<News> News { get; set; }
+    }
+
+    public class Division
+    { 
+        public float Percentage { get; set; }
+        public string Divison { get; set; }
+        public string Standard { get; set; }
+        public int PresentStudent { get; set; }
+        public int TotalStudent { get; set; }
+
+    }
+
+    #endregion
 }

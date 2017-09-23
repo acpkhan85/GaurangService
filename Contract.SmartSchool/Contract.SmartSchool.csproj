@@ -45,6 +45,7 @@
     <Compile Include="IBackOfficeService.cs" />
     <Compile Include="IClassSetupService.cs" />
     <Compile Include="ICms.cs" />
+    <Compile Include="IDashboardService.cs" />
     <Compile Include="IEventsAndNewsService.cs" />
     <Compile Include="INoticeBoardService.cs" />
     <Compile Include="IUserService.cs" />
