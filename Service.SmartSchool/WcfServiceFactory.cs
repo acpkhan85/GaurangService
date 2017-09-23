@@ -39,6 +39,10 @@ namespace Service.SmartSchool
             container.RegisterType<IDashboard, Dashboard>();
             container.RegisterType<IDashboardRepository, DashboardRepository>();
             container.RegisterType<IDashboardService, DashboardService>();
+
+            container.RegisterType<IAttendance, Attendance>();
+            container.RegisterType<IAttendanceRepository, AttendanceRepository>();
+            container.RegisterType<IAttendanceService, AttendanceService>();
         }
     }    
 }

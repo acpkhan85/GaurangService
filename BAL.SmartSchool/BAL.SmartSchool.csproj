@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.cs" />
+    <Compile Include="Attendance.cs" />
     <Compile Include="ClassSetup.cs" />
     <Compile Include="Dashboard.cs" />
     <Compile Include="EventsAndNews.cs" />
     <Compile Include="Interface\IAbout.cs" />
+    <Compile Include="Interface\IAttendance.cs" />
     <Compile Include="Interface\IClass.cs" />
     <Compile Include="Interface\IDashboard.cs" />
     <Compile Include="Interface\IEventsAnNews.cs" />

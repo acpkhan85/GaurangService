@@ -12,6 +12,11 @@ namespace DAL.SmartSchool
             throw new NotImplementedException();
         }
 
+        public List<ClassAttendance> getClassAttendence(int classId, int divisionId)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Attendance> getMonthlyAttendanceForAllStudent(int divisionId)
         {
             throw new NotImplementedException();

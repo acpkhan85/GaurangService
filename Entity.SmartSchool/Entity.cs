@@ -415,4 +415,14 @@ namespace Entity.SmartSchool
     }
 
     #endregion
+
+    #region Attendenece
+    public class ClassAttendance
+    {
+        public int StudentId { get; set; }
+        public string FullName { get; set; }
+        public string StudentImageURL { get; set; }
+        public Int16 Attendence { get; set; }
+    }
+    #endregion
 }

@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutService.svc" />
+    <Content Include="AttendanceService.svc" />
     <Content Include="BackOfficeService.svc" />
     <Content Include="ClassSetupService.svc" />
     <Content Include="DashboardService.svc" />
@@ -177,6 +178,9 @@
   <ItemGroup>
     <Compile Include="AboutService.svc.cs">
       <DependentUpon>AboutService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceService.svc.cs">
+      <DependentUpon>AttendanceService.svc</DependentUpon>
     </Compile>
     <Compile Include="AutomapBootstrap.cs" />
     <Compile Include="AutomapServiceBehavior.cs" />

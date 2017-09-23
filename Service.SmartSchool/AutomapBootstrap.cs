@@ -25,8 +25,8 @@ namespace Service.SmartSchool
                 cfg.CreateMap<ProcessDocumentDto, ProcessDocument>().ReverseMap();
                 cfg.CreateMap<EventsDto, Events>().ReverseMap();
                 cfg.CreateMap<Events, EventsDto>().ReverseMap();
-                cfg.CreateMap<NewsDto, News>();
-                cfg.CreateMap<News, NewsDto>();                
+                cfg.CreateMap<NewsDto, News>().ReverseMap();
+                cfg.CreateMap<ClassAttendance, ClassAttendanceDto>().ReverseMap();
                 #endregion
             });
         }

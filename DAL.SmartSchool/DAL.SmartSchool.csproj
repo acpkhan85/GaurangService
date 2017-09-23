@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutRepository.cs" />
+    <Compile Include="AttendanceRepository.cs" />
     <Compile Include="ClassRepository.cs" />
     <Compile Include="DashboardRepository.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="EventsAndNewsRepository.cs" />
     <Compile Include="Interface\IAboutRepository.cs" />
+    <Compile Include="Interface\IAttendanceRepository.cs" />
     <Compile Include="Interface\IClassRepository.cs" />
     <Compile Include="Interface\ICMSRepository.cs" />
     <Compile Include="Interface\IDashboardRepository.cs" />
