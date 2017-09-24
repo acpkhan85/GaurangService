@@ -170,8 +170,6 @@
     <Content Include="DashboardService.svc" />
     <Content Include="EventsAndNewsService.svc" />
     <Content Include="NoticeBoardService.svc" />
-    <Content Include="scripts\ai.0.22.19-build00125.js" />
-    <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="UserService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -214,7 +212,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Shared\_BundleLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

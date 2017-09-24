@@ -36,16 +36,16 @@ namespace Service.SmartSchool
             dashboard.TotalStaff = 25;
             dashboard.TotalStudents = 500;
             dashboard.Divisions = new List<DivisionDto>();
-            dashboard.Divisions.Add(new DivisionDto { Divison = "A", Standard = "1", PresentStudent = 50, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "B", Standard = "1", PresentStudent = 60, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "C", Standard = "2", PresentStudent = 60, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "D", Standard = "2", PresentStudent = 0, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "E", Standard = "3", PresentStudent = 1, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "F", Standard = "3", PresentStudent = 37, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "G", Standard = "4", PresentStudent = 42, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "H", Standard = "4", PresentStudent = 55, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "I", Standard = "4", PresentStudent = 55, TotalStudent = 60 });
-            dashboard.Divisions.Add(new DivisionDto { Divison = "J", Standard = "5", PresentStudent = 55, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "A", Standard = "1",Percentage=70, PresentStudent = 50, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "B", Standard = "1", Percentage = 70, PresentStudent = 60, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "C", Standard = "2", Percentage = 70, PresentStudent = 60, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "D", Standard = "2", Percentage = 50, PresentStudent = 0, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "E", Standard = "3",Percentage=70,  PresentStudent = 1, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "F", Standard = "3",Percentage=70,  PresentStudent = 37, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "G", Standard = "4",Percentage=70,  PresentStudent = 42, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "H", Standard = "4",Percentage=20,  PresentStudent = 55, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "I", Standard = "4",Percentage=40,  PresentStudent = 55, TotalStudent = 60 });
+            dashboard.Divisions.Add(new DivisionDto { Divison = "J", Standard = "5", Percentage = 70, PresentStudent = 55, TotalStudent = 60 });
 
             dashboard.Events = new List<EventsDto>();
             dashboard.Events.Add(new EventsDto { Header = "Event 1", EventDescription = "This is test event description", CreateBy = 1, CreatedDate = "13 Hours ago" });

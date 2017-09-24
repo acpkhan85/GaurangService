@@ -52,10 +52,12 @@
     <Compile Include="Interface\IEventsAnNews.cs" />
     <Compile Include="Interface\INoticeBoard.cs" />
     <Compile Include="Interface\IBackOffice.cs" />
+    <Compile Include="Interface\ISchoolProvider.cs" />
     <Compile Include="Interface\IUser.cs" />
     <Compile Include="NoticeBoard.cs" />
     <Compile Include="BackOffice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchooProvider.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
