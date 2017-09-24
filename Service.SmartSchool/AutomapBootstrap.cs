@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using Entity.SmartSchool;
+using Service.SmartSchool.CustomMapper;
 
 namespace Service.SmartSchool
 {
@@ -13,18 +14,20 @@ namespace Service.SmartSchool
         {
             Mapper.Initialize(cfg =>
             {
-
-                //souce==>Destination
                 cfg.CreateMap<Message, MessageDTO>();
 
-
-
                 #region Class
-                cfg.CreateMap<ClassRoomDto, ClassRoom>();
-                cfg.CreateMap<List<ExamTimeTable>, List<ExamTimeTableDto>>();
-
+                cfg.CreateMap<ClassRoomDto, ClassRoom>().ReverseMap();
+                cfg.CreateMap<StudentDto, Student>().ReverseMap();
+                cfg.CreateMap<TimeTableDto, TimeTable>().ReverseMap();
+                cfg.CreateMap<ExamTimeTableDto, ExamTimeTable>().ReverseMap();
+                cfg.CreateMap<HolidaysDto, Holidays>().ReverseMap();
+                cfg.CreateMap<ProcessDocumentDto, ProcessDocument>().ReverseMap();
+                cfg.CreateMap<EventsDto, Events>().ReverseMap();
+                cfg.CreateMap<Events, EventsDto>().ReverseMap();
+                cfg.CreateMap<NewsDto, News>();
+                cfg.CreateMap<News, NewsDto>();                
                 #endregion
-
             });
         }
     }

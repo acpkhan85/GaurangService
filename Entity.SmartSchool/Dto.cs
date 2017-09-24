@@ -12,18 +12,18 @@ namespace Entity.SmartSchool
         public string message { get; set; }
         public int status { get; set; }
     }
-
     public class ClassRoomDto
     {
         public int ClassId { get; set; }
-        [Required(ErrorMessage ="This field is required")]
-        [StringLength(1,ErrorMessage ="Max length is 1")]
+        [Required(ErrorMessage = "This field is required")]
+        [StringLength(1, ErrorMessage = "Max length is 1")]
         public string Standard { get; set; }
         [Required(ErrorMessage = "This field is required")]
         public string Division { get; set; }
 
         public string Actions { get; set; }
     }
+
     public class StudentDto
     {
         public int StudentId { get; set; }
@@ -96,6 +96,8 @@ namespace Entity.SmartSchool
         [Required]
         public DateTime EndDate { get; set; }
         public int SchoolId { get; set; }
+        public int CreateBy { get; set; }
+        public string CreatedDate { get; set; }
     }
 
     public class NewsDto
@@ -108,6 +110,8 @@ namespace Entity.SmartSchool
         [Required]
         public string NewsDescription { get; set; }
         public int SchoolId { get; set; }
+        public int CreateBy { get; set; }
+        public string CreatedDate { get; set; }
     }
     #endregion
 
@@ -166,6 +170,44 @@ namespace Entity.SmartSchool
         public string Application { get; set; }
         public int Status { get; set; }
         public string Notes { get; set; }
+    }
+    #endregion
+
+    #region Collections
+    public class BaseDTOCollection
+    {
+        public int TotalCount { get; set; }
+    }
+    public class ClassRoomCollection : BaseDTOCollection
+    {
+        public List<ClassRoomDto> ClassRoom { get; set; }
+    }
+    public class StudentCollection : BaseDTOCollection
+    {
+        public List<StudentDto> StudentList { get; set; }
+    }
+    #endregion
+
+    #region Dashboard
+    public class DashboardDto
+    {
+        public int TotalStudents { get; set; }
+        public int TotalAbsentStudents { get; set; }
+        public int TotalBackOfficeApplications { get; set; }
+        public int TotalStaff { get; set; }
+        public List<DivisionDto> Divisions { get; set; }
+        public List<EventsDto> Events { get; set; }
+        public List<NewsDto> News { get; set; }
+    }
+
+    public class DivisionDto
+    {
+        public float Percentage { get; set; }
+        public string Divison { get; set; }
+        public string Standard { get; set; }
+        public int PresentStudent { get; set; }
+        public int TotalStudent { get; set; }
+
     }
     #endregion
 }

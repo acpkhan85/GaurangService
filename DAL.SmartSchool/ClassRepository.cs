@@ -282,7 +282,7 @@ namespace DAL.SmartSchool
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(Helper.sp_GetExamTimeTable, connection);
+                SqlCommand command = new SqlCommand(Helper.sp_GetHoliday, connection);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@SchoolId", schoolId);
                 objReader = command.ExecuteReader();

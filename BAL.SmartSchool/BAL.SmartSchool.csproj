@@ -42,9 +42,11 @@
   <ItemGroup>
     <Compile Include="About.cs" />
     <Compile Include="ClassSetup.cs" />
+    <Compile Include="Dashboard.cs" />
     <Compile Include="EventsAndNews.cs" />
     <Compile Include="Interface\IAbout.cs" />
     <Compile Include="Interface\IClass.cs" />
+    <Compile Include="Interface\IDashboard.cs" />
     <Compile Include="Interface\IEventsAnNews.cs" />
     <Compile Include="Interface\INoticeBoard.cs" />
     <Compile Include="Interface\IBackOffice.cs" />
