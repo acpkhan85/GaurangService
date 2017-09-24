@@ -183,6 +183,8 @@ namespace Entity.SmartSchool
         public string LastName { get; set; }
         public string BloodGroup { get; set; }
         public string ParentCellNumber { get; set; }
+        public int RollNumber { get; set; }
+        public bool IsPlaneedLeave { get; set; }
     }
     public class TimeTable : BaseClass
     {

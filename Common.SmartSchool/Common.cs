@@ -37,6 +37,9 @@
 
         public static readonly string sp_GetProcessDocuments = "USP_GetAllSchoolStaff";
         public static readonly string sp_CreateUpdateProcessDocuments = "usp_CU_ProcessDocument";
+
+        public static readonly string sp_GetAttendence = "USP_GetAttendence";
+        public static readonly string sp_SaveAttendence = "USP_SaveAttendence";
     }
 
 }
