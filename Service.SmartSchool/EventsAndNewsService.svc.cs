@@ -33,14 +33,18 @@ namespace Service.SmartSchool
             return _eventsAndNews.addUpdateNews(news);
         }
 
-        public List<Events> getEvents(int schoolId, Pagination pagination, out int totalNoOfRecords)
+        public List<EventsDto> getEvents(int schoolId, Pagination pagination, out int totalNoOfRecords)
         {
-            return _eventsAndNews.getEvents(schoolId, pagination, out totalNoOfRecords);
+             var result =_eventsAndNews.getEvents(schoolId, pagination, out totalNoOfRecords);
+            List<EventsDto> list = Mapper.Map<List<Events>, List<EventsDto>>(result);
+            return list;
         }
 
-        public List<News> getNews(int schoolId, Pagination pagination, out int totalNoOfRecords)
+        public List<NewsDto> getNews(int schoolId, Pagination pagination, out int totalNoOfRecords)
         {
-            return _eventsAndNews.getNews(schoolId, pagination, out totalNoOfRecords);
+            var result = _eventsAndNews.getNews(schoolId, pagination, out totalNoOfRecords);
+            List<NewsDto> list = Mapper.Map<List<News>, List<NewsDto>>(result);
+            return list;
         }
     }
 }

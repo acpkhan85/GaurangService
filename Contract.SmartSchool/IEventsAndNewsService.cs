@@ -15,14 +15,14 @@ namespace Contract.SmartSchool
         [OperationContract]
         MessageDTO addUpdateEvents(Events events);
         [OperationContract]
-        List<Events> getEvents(int schoolId, Pagination pagination, out int totalNoOfRecords);
+        List<EventsDto> getEvents(int schoolId, Pagination pagination, out int totalNoOfRecords);
         #endregion
 
         #region News
         [OperationContract]
         Message addUpdateNews(News news);
         [OperationContract]
-        List<News> getNews(int schoolId, Pagination pagination, out int totalNoOfRecords);
+        List<NewsDto> getNews(int schoolId, Pagination pagination, out int totalNoOfRecords);
         #endregion
     }
 }
