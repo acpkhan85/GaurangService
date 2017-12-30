@@ -204,7 +204,7 @@ namespace Entity.SmartSchool
     public class ExamTimeTable : BaseClass
     {
 
-        public string ExamTimeTableID { get; set; }
+        public int ExamTimeTableID { get; set; }
         public int ClassId { get; set; }
         public string Subject { get; set; }
         public string FromDate { get; set; }

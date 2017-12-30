@@ -36,6 +36,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@CreatedDate", events.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", events.UpdatedDate);
                 msg.status = command.ExecuteNonQuery();
+                msg.message = msg.status == 1 ? Constants.savedSuccessfully : Constants.saveUnuccessfull;
             }
 
             return msg;
@@ -61,6 +62,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@CreatedDate", news.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", news.UpdatedDate);
                 msg.status = command.ExecuteNonQuery();
+                msg.message = msg.status == 1 ? Constants.savedSuccessfully : Constants.saveUnuccessfull;
             }
 
             return msg;

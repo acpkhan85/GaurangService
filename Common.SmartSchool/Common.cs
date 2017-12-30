@@ -42,4 +42,9 @@
         public static readonly string sp_SaveAttendence = "USP_SaveAttendence";
     }
 
+    public class Constants
+    {
+        public const string savedSuccessfully = "Record saved successfully";
+        public const string saveUnuccessfull = "Something went wrong, please contact adminsitrator";
+    }
 }

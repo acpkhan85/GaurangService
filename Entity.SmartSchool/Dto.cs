@@ -20,12 +20,13 @@ namespace Entity.SmartSchool
         public string Standard { get; set; }
         [Required(ErrorMessage = "This field is required")]
         public string Division { get; set; }
-
+        public int SchoolId { get; set; }
         public string Actions { get; set; }
     }
 
     public class StudentDto
     {
+        public int SchoolId { get; set; }
         public int StudentId { get; set; }
         public int ClassId { get; set; }
         [Required]
@@ -34,13 +35,16 @@ namespace Entity.SmartSchool
         public string MiddleName { get; set; }
         [Required]
         public string LastName { get; set; }
+        [Required]
         public string BloodGroup { get; set; }
         [Required]
         public string ParentCellNumber { get; set; }
     }
     public class TimeTableDto
     {
+        public int SchoolId { get; set; }
         public int TimeTableID { get; set; }
+        [Required]
         public int ClassId { get; set; }
         [Required]
         public string Mon { get; set; }
@@ -64,8 +68,9 @@ namespace Entity.SmartSchool
     }
     public class ExamTimeTableDto
     {
-
-        public string ExamTimeTableID { get; set; }
+        public int SchoolId { get; set; }
+        public int ExamTimeTableID { get; set; }
+        [Required]
         public int ClassId { get; set; }
         [Required]
         public string Subject { get; set; }
@@ -139,6 +144,7 @@ namespace Entity.SmartSchool
     #region Holiday Calendar
     public class HolidaysDto
     {
+        public int SchoolId { get; set; }
         public string HolidaysId { get; set; }
         [Required]
         public string FromDate { get; set; }
@@ -202,6 +208,7 @@ namespace Entity.SmartSchool
 
     public class DivisionDto
     {
+        public int SchoolId { get; set; }
         public float Percentage { get; set; }
         public string Divison { get; set; }
         public string Standard { get; set; }

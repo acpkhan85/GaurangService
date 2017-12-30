@@ -30,6 +30,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@CreatedDate", division.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", division.UpdatedDate);
                 msg.status = command.ExecuteNonQuery();
+                msg.message = msg.status == 1 ? Constants.savedSuccessfully : Constants.saveUnuccessfull;
             }
 
             return msg;
@@ -91,6 +92,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@CreatedDate", student.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", student.UpdatedDate);
                 msg.status = command.ExecuteNonQuery();
+                msg.message = msg.status == 1 ? Constants.savedSuccessfully : Constants.saveUnuccessfull;
             }
 
             return msg;
@@ -153,6 +155,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@CreatedDate", timeTable.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", timeTable.UpdatedDate);
                 msg.status = command.ExecuteNonQuery();
+                msg.message = msg.status == 1 ? Constants.savedSuccessfully : Constants.saveUnuccessfull;
             }
 
             return msg;
@@ -214,6 +217,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@CreatedDate", timeTable.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", timeTable.UpdatedDate);
                 msg.status = command.ExecuteNonQuery();
+                msg.message = msg.status == 1 ? Constants.savedSuccessfully : Constants.saveUnuccessfull;
             }
 
             return msg;
@@ -234,7 +238,7 @@ namespace DAL.SmartSchool
                     while (objReader.Read())
                     {
                         ExamTimeTable objExamTimeTable = new ExamTimeTable();
-                        objExamTimeTable.ExamTimeTableID = objReader["ExamTimeTableID"].ToString();
+                        objExamTimeTable.ExamTimeTableID = (int)(objReader["ExamTimeTableID"]);
                         objExamTimeTable.ClassId = (int)objReader["ClassId"];
                         objExamTimeTable.Subject = objReader["Subject"].ToString();
                         objExamTimeTable.FromDate = objReader["FromDate"].ToString();
@@ -272,6 +276,7 @@ namespace DAL.SmartSchool
                 command.Parameters.AddWithValue("@CreatedDate", holiday.CreatedDate);
                 command.Parameters.AddWithValue("@UpdatedDate", holiday.UpdatedDate);
                 msg.status = command.ExecuteNonQuery();
+                msg.message = msg.status == 1 ? Constants.savedSuccessfully : Constants.saveUnuccessfull;
             }
 
             return msg;

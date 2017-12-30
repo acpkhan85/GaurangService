@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BAL.SmartSchool.Interface;
 using Contract.SmartSchool;
 using Entity.SmartSchool;
+using AutoMapper;
 
 namespace Service.SmartSchool
 {
@@ -17,29 +18,44 @@ namespace Service.SmartSchool
             _class = classRoom;
         }
 
-        public Message addUpdateHolidayDetail(Holidays holiday)
+        public MessageDTO addUpdateHolidayDetail(HolidaysDto holiday)
         {
-            return _class.addUpdateHolidayDetail(holiday);
+            Holidays holi = Mapper.Map<HolidaysDto, Holidays>(holiday);
+            Message msg = _class.addUpdateHolidayDetail(holi);
+            var result = Mapper.Map<Message, MessageDTO>(msg);
+            return result;
         }
 
-        public Message addUpdateStandrdDivision(ClassRoom classRoomDetail)
+        public MessageDTO addUpdateStandrdDivision(ClassRoomDto classRoomDetail)
         {
-            return _class.createUpdateDivision(classRoomDetail);
+            ClassRoom classR = Mapper.Map<ClassRoomDto, ClassRoom>(classRoomDetail);
+            Message msg = _class.createUpdateDivision(classR);
+            var result = Mapper.Map<Message, MessageDTO>(msg);
+            return result;
         }
 
-        public Message addUpdateStudentDetail(Student student)
+        public MessageDTO addUpdateStudentDetail(StudentDto student)
         {
-            return _class.addUpdateStudentDetail(student);
+            Student std = Mapper.Map<StudentDto, Student>(student);
+            Message msg = _class.addUpdateStudentDetail(std);
+            var result = Mapper.Map<Message, MessageDTO>(msg);
+            return result;
         }
 
-        public Message addUpdateExamTimeTable(ExamTimeTable examTimeTable)
+        public MessageDTO addUpdateExamTimeTable(ExamTimeTableDto examTimeTable)
         {
-            return _class.addUpdateExamTimeTable(examTimeTable);
+            ExamTimeTable examTimeT = Mapper.Map<ExamTimeTableDto, ExamTimeTable>(examTimeTable);
+            Message msg = _class.addUpdateExamTimeTable(examTimeT);
+            var result = Mapper.Map<Message, MessageDTO>(msg);
+            return result;
         }
 
-        public Message addUpdateTimeTable(TimeTable timeTable)
+        public MessageDTO addUpdateTimeTable(TimeTableDto timeTable)
         {
-            return _class.addUpdateTimeTable(timeTable);
+            TimeTable timeT = Mapper.Map<TimeTableDto, TimeTable>(timeTable);
+            Message msg = _class.addUpdateTimeTable(timeT);
+            var result = Mapper.Map<Message, MessageDTO>(msg);
+            return result;
         }
 
         public List<ExamTimeTableDto> getExamTimeTable(int classId)

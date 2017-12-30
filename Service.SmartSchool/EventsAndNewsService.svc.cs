@@ -21,16 +21,20 @@ namespace Service.SmartSchool
             _eventsAndNews = EventsAndNews;
         }
 
-        public MessageDTO addUpdateEvents(Events events)
+        public MessageDTO addUpdateEvents(EventsDto events)
         {
-            Message msg = _eventsAndNews.addUpdateEvents(events);
+            Events evs = Mapper.Map<EventsDto, Events>(events);
+            Message msg = _eventsAndNews.addUpdateEvents(evs);
             var result = Mapper.Map<Message, MessageDTO>(msg);
             return result;
         }
 
-        public Message addUpdateNews(News news)
+        public MessageDTO addUpdateNews(NewsDto news)
         {
-            return _eventsAndNews.addUpdateNews(news);
+            News nws = Mapper.Map<NewsDto, News>(news);
+            Message msg = _eventsAndNews.addUpdateNews(nws);
+            var result = Mapper.Map<Message, MessageDTO>(msg);
+            return result;
         }
 
         public List<EventsDto> getEvents(int schoolId, Pagination pagination, out int totalNoOfRecords)
